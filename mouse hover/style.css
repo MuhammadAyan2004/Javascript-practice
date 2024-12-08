@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+main{
+    width: 100%;
+    height: 100vh;
+    background-color: darkslategray;
+}
+#mouse{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    border-radius: 50%;
+    filter: blur(100px);
+    cursor: pointer;
+    position: fixed;
+    transform: translate(-50%, -50%);
+}
+#mouse2{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    filter: blur(20px);
+    cursor: pointer;
+    position: fixed;
+    transform: translate(-50%, -50%);
+}
