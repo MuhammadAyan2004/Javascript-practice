@@ -808,10 +808,29 @@
 // }
 // add(10,10,20,40)
 
-let sohw = function (a , b){
-        let c = a+b;
 
-        console.log(c);
+
+
+// anonymous function
+// let sohw = function (a , b){
+//         let c = a+b;
+//         console.log(c);
+// }
+// sohw(5,7)
+
+// part#2
+// setTimeout(function(){
+//         document.write("hello world")
+
+// },3000)
+
+
+// immediately invoked function
+
+let msg = "hello guys"
+
+function show(){
+        console.log(msg);
 }
+show();
 
-sohw(5,7)
