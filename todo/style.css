@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+    
+}
+main{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width: 50em;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    margin-top: 1em;
+    font-size: 50px;
+}
+.input-field{
+    width: 70%;
+}
+input{
+    width: 80%;
+    height: 3em;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0px 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+button{
+    width: 15%;
+    height: 3em;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: green;
+    font-weight: 600;
+}
+.todo{
+    width: 90%;
+    height: 100%;
+    margin-top: 30px;
+    padding: 10px;
+}
+#todo-list{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    list-style: none;
+}
+#todo-list li{
+    width: 100%;
+    min-height: 3em;
+    background-color: darkslateblue;
+    padding: 20px;
+    margin-top: 10px;
+    position: relative;
+    font-size: 20px;
+    border-radius: 10px;
+}
+#todo-list li p{
+    width: 80%;
+    height: 100%;
+}
+#todo-list li .del{
+    width: 4em;
+    height: 70%;
+    position:absolute;
+    top: 0.5em;
+    right: 6em; 
+    color: red;
+    font-weight: 100;
+}
+#todo-list li .edit{
+    width: 4em;
+    height: 70%;
+    position:absolute;
+    top: 0.5em;
+    right: 1em;
+    font-weight: 100;
+}
+
+
