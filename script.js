@@ -827,10 +827,161 @@
 
 // immediately invoked function
 
-let msg = "hello guys"
+// let msg = "hello guys"
 
-function show(){
-        console.log(msg);
+// function show(){
+//         console.log(msg);
+// }
+// show();
+
+
+// let pear = {
+//         student_1:{
+//                 name: "ayan",
+//                 class: "undergradute",
+//                 roll_No: 918_2023
+//         },
+//         student_2:{
+//                 name: "usman",
+//                 class: "undergradute",
+//                 roll_No: 919_2023
+//         },
+//         student_3:{
+//                 name: "mustufa",
+//                 class: "undergradute",
+//                 roll_No: 920_2023
+//         },
+//         student_4:{
+//                 name: "esar",
+//                 class: "undergradute",
+//                 roll_No: 921_2023
+//         }
+// }
+
+// for(let key in pear){
+//         console.log(key);
+//         for(let keys in pear[key]){
+//                 console.log(pear[key][keys]);
+//         }
+// }
+
+
+// let pear = new Object();
+
+// pear.name = "ayan";
+// pear.age = "20"
+
+// console.log(pear.name,pear.age);
+
+// let pear = {
+//         name: "ayan",
+//         age: 20,
+
+//         get getName(){
+//                 return this.name.toUpperCase();
+//         },
+//         set setName(n){
+//                 this.name = n.toUpperCase();
+//         }
+// }
+// pear.name = "usman";
+
+// console.log(pear.getName);
+// console.log(pear);
+
+
+// Getter and setter function 
+// method 1 Encapsulation
+// class User {
+//         constructor(name, email,id){
+//                 this._name = name; 
+//                 this._email = email;
+//                 this._id = id;
+//         }
+//         get name() {
+//                 console.log("getter call");
+//                 return this._name;
+//           }
+//         get id() {
+//                 console.log("getter call");
+//                 return this._id;
+//           }
+//         get email() {
+//                 console.log("getter call");
+//                 return this._email;
+//           }  
+//         set name(newName){
+//                 if(newName){
+//                         console.log("setter call");
+//                         this._name = newName;
+//                 }
+//         }
+//         set id(newid){
+//                 if(newid){
+//                         console.log("setter call");
+//                         this._id = newid;
+//                 }
+//         }
+//         set email(newEmail){
+//                 if(newEmail){
+//                         console.log("setter call");
+//                         this._email = newEmail;
+//                 }
+//         }
+// }
+
+// const user = new User("ayan", "ayan@gmail.com","917-2023");
+// for(let key in user){
+//         console.log(key,":",user[key]);
+// }
+
+// user.name = "Ali";
+// user.id = "918-2023";
+// user.email = "ali@gmail.com";
+// for(let key in user){
+//         console.log(key,":",user[key]);
+// }
+// console.log(user);
+
+
+// metho2 Reactive State Management
+
+// const State = {
+//  _count:0,
+//  get count(){
+//         console.log("getter called");
+//         return this._count
+//  },
+//  set count(newValue){
+//         console.log("setter called");
+//         this._count = newValue;
+//  }
+// }
+
+// console.log(State.count);
+// State.count = 10;
+// console.log(State.count);
+
+// method 3 data validation
+
+class form{
+        constructor(){
+                this._email = "";
+        }
+        get emial(){
+                console.log("getter called");
+                return this._email;
+        }
+        set email(newEmail){
+                if(newEmail.includes("@")){
+                        this._email = newEmail;
+                }else{
+                        console.log("your given  email is invalid");
+                }
+        }
 }
-show();
 
+const page = new form();
+console.log(page);
+page.email = "invalidEmail"
+console.log(page);
