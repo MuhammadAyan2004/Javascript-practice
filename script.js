@@ -964,24 +964,126 @@
 
 // method 3 data validation
 
-class form{
-        constructor(){
-                this._email = "";
-        }
-        get emial(){
-                console.log("getter called");
-                return this._email;
-        }
-        set email(newEmail){
-                if(newEmail.includes("@")){
-                        this._email = newEmail;
-                }else{
-                        console.log("your given  email is invalid");
-                }
-        }
-}
+// class form{
+//         constructor(){
+//                 this._email = "";
+//         }
+//         get emial(){
+//                 console.log("getter called");
+//                 return this._email;
+//         }
+//         set email(newEmail){
+//                 if(newEmail.includes("@")){
+//                         this._email = newEmail;
+//                 }else{
+//                         console.log("your given email is invalid");
+//                 }
+//         }
+// }
 
-const page = new form();
-console.log(page);
-page.email = "invalidEmail"
-console.log(page);
+// const page = new form();
+// // console.log(page);
+// // page.email = "invalidEmail"
+// page.email = "ayan@gmail.com";
+// console.log(page._email);
+
+
+
+// method 4 lazy evalution
+// class person{
+//         constructor(firstName, lastName){
+//                 this._firstName = firstName
+//                 this._lastName = lastName
+//         }
+//         get fullName(){
+//                 return `${this._firstName} ${this._lastName}`
+//         }
+// };
+// const user1 = prompt("enter your first name");
+// const user2 = prompt("enter your last name");
+
+// const per = new person(user1,user2);
+// console.log(per.fullName);
+
+
+// method 5 Interfacing with APIs or Libraries
+
+// class  userData{
+//         constructor(){
+//                 this._data = null;
+//         }
+//         get data(){
+//                 if(!this._data){
+//                   console.log("Fetching data from API...");
+//                   this._data = {id:1, name: "ayan"};
+//                 }
+//                 return this._data;
+//         }
+// }
+// const user = new userData();
+// user._data = "hello123"
+// console.log(user.data);
+
+// method 6 DOM Manipulation in Custom Elements
+
+// class myElement extends HTMLElement{
+//         constructor(){
+//                 super();
+//                 this._value = "";
+//         }
+//         get value(){
+//                 return this._value;
+//         }
+//         set value(newValue){
+//                 this._value = newValue;
+//                 this.textContent = `value: ${this._value}`
+//         }
+// }
+
+// customElements.define("my-element",myElement);
+// const element = document.createElement("my-element");
+// document.body.appendChild(element);
+// element.value = "hello world!";
+// console.log(element.textContent);
+
+//  method 7 
+
+// class BankAccount {
+//         constructor(owner, balance) {
+//           this.owner = owner;
+//           this._balance = balance;
+//         }
+      
+//         get balance() {
+//           return `Your balance is $${this._balance}`;
+//         }
+      
+//         set balance(newBalance) {
+//           console.log("You cannot set the balance directly!");
+//           this._balance = newBalance;
+//         }
+//       }
+      
+//       const account = new BankAccount("Ayan", 1000);
+//       console.log(account.balance); // Your balance is $1000
+//       account.balance = 2000; // You cannot set the balance directly!
+//       console.log(account.balance);
+//       console.log(account);
+
+
+// method 8 object constructor function
+
+
+function Student(first, last, age, cls){
+        this.firstName= first;
+        this.lastName= last;
+        this.age= age;
+        this.class= cls;
+}
+let studentNo = prompt("enter student number")
+let first = prompt("enter your first name:");
+let last = prompt("enter your last name:");
+let age = prompt("enter your age name:");
+let cls = prompt("enter your class name:");
+let student = new Student(first, last,age,cls);
+console.log(student);
