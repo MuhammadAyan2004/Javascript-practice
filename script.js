@@ -1074,16 +1074,16 @@
 // method 8 object constructor function
 
 
-function Student(first, last, age, cls){
-        this.firstName= first;
-        this.lastName= last;
-        this.age= age;
-        this.class= cls;
-}
-let studentNo = prompt("enter student number")
-let first = prompt("enter your first name:");
-let last = prompt("enter your last name:");
-let age = prompt("enter your age name:");
-let cls = prompt("enter your class name:");
-let student = new Student(first, last,age,cls);
-console.log(student);
+// function Student(first, last, age, cls){
+//         this.firstName= first;
+//         this.lastName= last;
+//         this.age= age;
+//         this.class= cls;
+// }
+// let studentNo = prompt("enter student number")
+// let first = prompt("enter your first name:");
+// let last = prompt("enter your last name:");
+// let age = prompt("enter your age name:");
+// let cls = prompt("enter your class name:");
+// let student = new Student(first, last,age,cls);
+// console.log(student);
