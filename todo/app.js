@@ -1,51 +1,48 @@
 const input = document.getElementById("add-text");
 const addbtn = document.querySelector(".add");
-const todo = document.getElementById("todo-list");
-
+const list = document.getElementById("todo-list");
 let editTodo = null;
 
-const showtask = ()=>{
-    const inputText = input.value.trim();
-    if(inputText === ""){
-        alert("input was empty")
+const showTask=()=>{
+    let inputText = input.value.trim();
+    if(inputText == ""){
+        alert("write something to add");
         return false;
-    }else if(addbtn.innerText == "Edit"){
+    }else if(addbtn.innerHTML == "edit"){
         editTodo.target.previousElementSibling.innerHTML = inputText;
         addbtn.innerHTML = "Add";
         input.value = "";
-        editTodo = null
+        editTodo = null;
     }else{
+    let p = document.createElement("p")
+    let li = document.createElement("li")
+    p.innerHTML = inputText;
+    li.appendChild(p)
+    list.appendChild(li)
+    input.value = "";
+    
+    const edit = document.createElement("button");
+    edit.classList.add("edit");
+    edit.innerText = "edit";
+    li.appendChild(edit)
 
-        let li = document.createElement("li");
-        let p = document.createElement("p");
-        p.innerHTML = input.value
-        li.appendChild(p);
-        todo.appendChild(li);
-        input.value = "";
-
-        const edit = document.createElement("button");
-        edit.classList.add("edit");
-        edit.innerHTML = "Edit";
-        li.appendChild(edit);
-        
-        const del = document.createElement("button");
-        del.classList.add("del");
-        del.innerText = "Del";
-        li.appendChild(del);
-
-    }
+    const del = document.createElement("button");
+    del.classList.add("del");
+    del.innerText = "remove";
+    li.appendChild(del)
+ }
 }
-
-const updateTodo = (e)=>{
-    if(e.target.innerHTML==="Del"){
-        todo.removeChild(e.target.parentElement);
-    }else if (e.target.innerHTML==="Edit"){
-        input.value=e.target.previousElementSibling.innerHTML;
+const updateTode = (e)=>{
+    if(e.target.innerHTML === "remove"){
+        list.removeChild(e.target.parentElement)
+    }else if(e.target.innerHTML === "edit"){
+        input.value = e.target.previousElementSibling.innerHTML;
         input.focus();
-        addbtn.innerText = "Edit";
-        editTodo=e;
+        addbtn.innerText = "edit";
+        editTodo = e
     }
 }
 
-addbtn.addEventListener("click",showtask);
-todo.addEventListener("click",updateTodo);
+
+list.addEventListener("click",updateTode)
+addbtn.addEventListener("click",showTask)
