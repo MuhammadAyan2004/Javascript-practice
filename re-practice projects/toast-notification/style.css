@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: darkturquoise;
+    position: relative;
+}
+.container{
+    padding: 40px;
+}
+.container .btn{
+    width: 20vh;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: darkslateblue;
+    color: white;
+    font-size: 16px;
+    box-shadow: inset 2px 2px 10px 5px black;
+}
+.btn:hover{
+    background-color: darkslategray;
+}
+.toastbox{
+    position: absolute;bottom: 30px;right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px;
+}
+.toastbox .toast{
+    width: 60vh;
+    background-color: white;
+    height: 10vh;
+    font-size: 24px;
+    padding: 20px;
+    margin-top: 10px;
+    box-shadow: 0 0 2 rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+.toast.i{
+    margin: 0px 40px;
+    font-size: 35px;
+}
+.toast.success i {
+    color: green;
+}
+.toast.error i {
+    color: rgb(212, 7, 7);
+}
+.toast.invalid i {
+    color: rgb(255, 187, 0);
+}
+
+.toast::before{
+    content: '';
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color: green;
+    animation: anim 5s linear forwards;
+}
+@keyframes anim {
+    100%{
+        width: 0%;
+    }
+}
+.toast.error::before{
+    content: '';
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgb(212, 7, 7);
+    animation: anim 5s linear forwards;
+}
+.toast.invalid::before{
+    content: '';
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color: yellow;
+    animation: anim 5s linear forwards;
+}
+
