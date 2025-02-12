@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: cornflowerblue;
+}
+.product{
+    width: 50vh;
+    height: 72vh;
+    background-color: black;
+    display: flex;
+    align-items: end;
+    position: relative;
+}
+.product img{
+    width: 90%;
+}
+.product .golas{
+    min-width:50px;
+    min-height: 50px;
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: end;
+    padding: 10px;
+    gap: 10px;
+}
+.golas span{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.gola1{
+    background-color: blue;
+}
+.gola2, .gola3{
+    background-color: grey;
+}
+.details{
+    width: 55vh;
+    height: 68vh;
+    background-color: white;
+    padding: 40px;
+}
+h1,h2,h3{
+    margin-block: 10px;
+}
+.details p{
+    color: grey;
+}
+.size-select{
+    display: flex;
+    align-items: center;
+    margin-block: 50px 10px;
+}
+.size-select p,.color-select p,.quantity p{
+    width: 70px;
+}
+.size-select input:checked + span{
+    color: blue;
+    font-weight: 600;
+}
+.size-select input{
+    display: none;
+}
+.size-select span{
+    padding: 10px;
+    cursor: pointer;
+}
+.color-select, .quantity{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.color-select span{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+    
+}
+.color1{
+    background-color: red;
+}
+.color2{
+    background-color: blue;
+}
+.color3{
+    background-color: yellow;
+}
+.color4{
+    background-color: green;
+}
+.color-select input{
+    display: none;
+}
+.color-select input:checked + span{
+    transform: scale(0.7);
+    box-shadow:  0 0 0 4px #fff,0 0 0 6px #000;
+}
+.quantity input{
+    width: 20%;
+    border-radius: 10px;
+    padding: 3px 5px;
+    border: 2px solid black;
+    outline: none;
+}
+button{
+    width: 100%;
+    margin-block: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
