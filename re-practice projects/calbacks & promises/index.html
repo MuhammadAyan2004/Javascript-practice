@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises Example</title>
+    <style>
+        #message {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simulated Data Fetch</h1>
+    <button onclick="loadData()">Load Data</button>
+    <p id="message"></p>
+
+    <script>
+        function fetchData() {
+            return new Promise((resolve, reject) => {
+                document.getElementById("message").textContent = "Loading...";
+                
+                setTimeout(() => {
+                    const success = Math.random() > 0.2; // 80% chance of success
+                    if (success) {
+                        resolve("Data loaded successfully!");
+                    } else {
+                        reject("Failed to load data. Try again.");
+                    }
+                }, 2000); // Simulating a 2-second delay
+            });
+        }
+
+        function loadData() {
+            fetchData()
+                .then(message => {
+                    document.getElementById("message").textContent = message;
+                })
+                .catch(error => {
+                    document.getElementById("message").textContent = error;
+                });
+        }
+    </script>
+
+</body>
+</html> -->
