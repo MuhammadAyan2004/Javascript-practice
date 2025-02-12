@@ -1,0 +1,27 @@
+const textElement = document.getElementById("changing-text");
+const words = ["Developer", "Freelancer", "Youtuber"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+    let currentWord = words[wordIndex];
+    if (isDeleting) {
+        charIndex--;
+    } else {
+        charIndex++;
+    }
+
+    textElement.textContent = currentWord.substring(0, charIndex);
+
+    if (!isDeleting && charIndex === currentWord.length) {
+        setTimeout(() => isDeleting = true, 1000); // Wait before deleting
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length; // Move to next word
+    }
+
+    setTimeout(typeEffect, isDeleting ? 100 : 200); // Typing and deleting speed
+}
+
+typeEffect();
