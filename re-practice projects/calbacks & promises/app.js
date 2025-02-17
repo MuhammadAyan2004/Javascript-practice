@@ -165,16 +165,44 @@
 
 // attacing multiple handler
 
+// let p1 = new Promise((res,rej)=>{
+//     console.log("promise not resolved yet");
+//     setTimeout(() => {
+//         res("hey i am resolved")
+//     }, 2000);
+// })
+
+// p1.then(value => console.log(value))
+// p1.then(value => {
+//     setTimeout(() => {
+//         console.log("i am another function of p1",value)
+//     }, 2000);
+// })
+
+
+// promise api
+
 let p1 = new Promise((res,rej)=>{
-    console.log("promise not resolved yet");
     setTimeout(() => {
-        res("hey i am resolved")
+        res('value 1')
+    }, 10000);
+})
+let p2 = new Promise((res,rej)=>{
+    setTimeout(() => {
+        rej(new Error("hey i'm here"))
     }, 2000);
+})
+let p3 = new Promise((res,rej)=>{
+    setTimeout(() => {
+        res('value 3')
+    }, 3000);
 })
 
-p1.then(value => console.log(value))
-p1.then(value => {
-    setTimeout(() => {
-        console.log("i am another function of p1",value)
-    }, 2000);
-})
+// Promise method
+// let Promise_all = Promise.all([p1,p2,p3])
+// let Promise_all = Promise.allSettled([p1,p2,p3])
+// let Promise_all = Promise.resolve([p1,p2,p3])
+// let Promise_all = Promise.reject([p1,p2,p3])
+// let Promise_all = Promise.race([p1,p2,p3])
+let Promise_all = Promise.any([p1,p2,p3])
+Promise_all.then(value => console.log(value))
