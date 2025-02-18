@@ -57,6 +57,113 @@
 //     console.log("i love u 3 thousand");
 // }, 4000);
 
-for(let i =1; i<=3000; i++){
-    console.log(i +":"+ " i love you");
+
+
+// use promises to make loadscript function  problem #1
+
+
+
+// function scriptLoad(src){
+
+//     return new Promise((res,rej)=>{
+//         const script = document.createElement("script")
+//         script.src = src
+//         document.body.append(script)
+
+//         script.onload = ()=>{
+//             res(src)
+//         }
+//         script.onerror= ()=>{
+
+//             rej(src)
+//         }
+//     })
+// }
+
+// let p1 = scriptLoad("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js");
+// p1.then((value)=>{
+//     console.log(value);
+// }).catch(err => console.log("sorry but your given script is wrong",err))
+
+
+
+// use async\await to make loadscript function problem #2
+
+
+// async function loadscript(src) {
+
+//     const script = document.createElement("script")
+//     script.src = src
+//     document.body.append(script)
+    
+//     let loaded = script.onload = src
+
+//     let load = await loaded
+//     console.log(load);
+
+// }
+
+
+// loadscript("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js")
+
+
+// problem #3
+
+// let p = ()=>{
+//     return new Promise((resolve, reject) => {
+//         setTimeout(()=>{
+//             reject(new Error("The error comes in me baby"))
+//         },3000)
+//     })
+// }
+
+// async function wait() {
+    
+//     try{
+//         let a = await p()
+//         a()
+//     }catch(err){
+//         console.log(err);
+//     }
+// }
+
+// wait()
+
+
+// problem #4
+
+let p1 = async()=>{
+    return new Promise((res,rej)=>{
+        setTimeout(() => {
+            res(10)
+        }, 2000);
+    })
 }
+let p2 = async()=>{
+    return new Promise((res,rej)=>{
+        setTimeout(() => {
+            res(20)
+        }, 3000);
+    })
+}
+let p3 = async()=>{
+    return new Promise((res,rej)=>{
+        setTimeout(() => {
+            res(30)
+        }, 1000);
+    })
+}
+
+
+let run = async()=>{
+    console.time("run")
+    let a1 = p1()
+    let a2 = p2()
+    let a3 = p3()
+
+    let value = await Promise.all([a1,a2,a3])
+
+    console.log(value);
+    console.timeEnd("run")
+}
+run()
