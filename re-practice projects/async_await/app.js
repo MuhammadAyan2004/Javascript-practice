@@ -132,38 +132,173 @@
 
 // problem #4
 
-let p1 = async()=>{
-    return new Promise((res,rej)=>{
-        setTimeout(() => {
-            res(10)
-        }, 2000);
+// let p1 = async()=>{
+//     return new Promise((res,rej)=>{
+//         setTimeout(() => {
+//             res(10)
+//         }, 2000);
+//     })
+// }
+// let p2 = async()=>{
+//     return new Promise((res,rej)=>{
+//         setTimeout(() => {
+//             res(20)
+//         }, 3000);
+//     })
+// }
+// let p3 = async()=>{
+//     return new Promise((res,rej)=>{
+//         setTimeout(() => {
+//             res(30)
+//         }, 1000);
+//     })
+// }
+
+
+// let run = async()=>{
+//     console.time("run")
+//     let a1 = p1()
+//     let a2 = p2()
+//     let a3 = p3()
+
+//     let value = await Promise.all([a1,a2,a3])
+
+//     console.log(value);
+//     console.timeEnd("run")
+// }
+// run()
+
+
+// excercise #5
+
+// async function hackerman() {
+    
+//     const div = document.querySelector("div")
+//     const pTag1 = document.createElement("p")
+//     const pTag2 = document.createElement("p")
+//     const pTag3 = document.createElement("p")
+//     const pTag4 = document.createElement("p")
+//     const pTag5 = document.createElement("p")
+
+//     let pro1 = ()=>{
+//         return new Promise((res,rej)=>{
+//             setTimeout(() => {
+//                 pTag1.style.color = "green"
+//                 let p1 = "Initializing hack program...."
+//                 pTag1.textContent = p1
+//                 res(pTag1)
+//             }, 1000);
+//         })
+//     }
+//     let pro2 = ()=>{
+//         return new Promise((res,rej)=>{
+//             setTimeout(() => {
+//                 pTag2.style.color = "green"
+//                 let p2 = "Hacking into the mainframe...."
+//                 pTag2.textContent = p2
+//                 res(pTag2)
+//             }, 2000);
+//         })
+//     }
+//     let pro3 = ()=>{
+//         return new Promise((res,rej)=>{
+//             setTimeout(() => {
+//                 pTag3.style.color = "green"
+//                 let p3 = "Downloading the secret files...."
+//                 pTag3.textContent = p3
+//                 res(pTag3)
+//             }, 3000);
+//         })
+//     }
+//     let pro4 = ()=>{
+//         return new Promise((res,rej)=>{
+//             setTimeout(() => {
+//                 pTag4.style.color = "green"
+//                 let p4 = "Deleting all the files...."
+//                 pTag4.textContent = p4
+//                 res(pTag4)
+//             }, 5000);
+//         })
+//     }
+//     let a1 = await pro1()
+//     div.append(a1)
+//     let a2 = await pro2()
+//     div.append(a2)
+//     let a3 = await pro3()
+//     div.append(a3)
+//     let a4 = await pro4()
+//     div.append(a4)
+
+//     const btn = document.createElement("button")
+//     btn.textContent = "want to stop the hacking press me" 
+//     btn.addEventListener("click",()=>{
+//         pTag5.textContent = "ha ha ha you can't stop me"
+//         pTag5.style.color = "green"
+//         div.append(pTag5)
+//     })
+
+//     div.append(btn)
+// }
+
+// hackerman()
+
+
+//async function hackerman() {
+    
+// const div = document.querySelector("div");
+// const messages = [
+//     "Initializing hack program....",
+//     "Hacking into the mainframe....",
+//     "Downloading the secret files....",
+//     "Deleting all the files...."
+// ]
+// for(let i = 0; i<messages.length; i++){
+//     await new Promise(res => setTimeout(res (i+1)*1000))
+//     const p = document.createElement("p")
+//     p.style.color = "green"
+//     p.textContent = messages[i]
+//     div.append(p)
+// }
+
+// const btn = document.createElement("button")
+// btn.textContent = "want to stop the hacking press me" 
+// btn.addEventListener("click",()=>{
+//     const pTag5 = document.createElement("p");
+//     pTag5.textContent = "ha ha ha you can't stop me"
+//     pTag5.style.color = "green"
+//     div.append(pTag5)
+// })
+
+// div.append(btn)
+// }
+
+// hackerman() 
+
+const text = document.getElementById("text")
+const messages = [
+    "Initializing hack program....",
+    "Hacking into the mainframe....",
+    "Downloading the secret files....",
+    "Deleting all the files...."
+]
+
+const sleep = async(seconds)=>{
+    return new Promise((res)=>{
+        setTimeout(()=>{
+            res(true)
+        }, seconds * 1000)
     })
 }
-let p2 = async()=>{
-    return new Promise((res,rej)=>{
-        setTimeout(() => {
-            res(20)
-        }, 3000);
-    })
-}
-let p3 = async()=>{
-    return new Promise((res,rej)=>{
-        setTimeout(() => {
-            res(30)
-        }, 1000);
-    })
+
+const showhack = async(messages)=>{
+    await sleep(2)
+    console.log(messages);
+    text.innerHTML = text.innerHTML + messages + "<br>"
 }
 
 
-let run = async()=>{
-    console.time("run")
-    let a1 = p1()
-    let a2 = p2()
-    let a3 = p3()
-
-    let value = await Promise.all([a1,a2,a3])
-
-    console.log(value);
-    console.timeEnd("run")
-}
-run()
+(async()=>{
+    for(let i = 0; i<messages.length; i++){
+        await showhack(messages[i])
+    }
+})()
