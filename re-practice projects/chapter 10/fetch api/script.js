@@ -49,3 +49,26 @@
 // }
 // btn.addEventListener("click",qoute)
 
+
+// sendind post request 
+
+async function createTodo() {
+
+    let options = {
+        method: "POST",
+        headers: {
+            "content-type":"application/json",
+        },
+        body: JSON.stringify({
+            title:"Ayan",
+            body:"bhai",
+            userid:11,
+        })
+    }
+
+  let response = await  fetch('https://jsonplaceholder.typicode.com/todos/1')
+  let p = await response.json()
+  console.log(p);
+}
+createTodo()
+
