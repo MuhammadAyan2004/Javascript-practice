@@ -52,23 +52,35 @@
 
 // sendind post request 
 
-async function createTodo() {
+async function createTodo(todo) {
 
     let options = {
         method: "POST",
         headers: {
             "content-type":"application/json",
         },
-        body: JSON.stringify({
-            title:"Ayan",
-            body:"bhai",
-            userid:11,
-        })
+        body: JSON.stringify(todo)
     }
 
-  let response = await  fetch('https://jsonplaceholder.typicode.com/todos/1')
+  let response = await  fetch('https://jsonplaceholder.typicode.com/posts/',options)
   let p = await response.json()
-  console.log(p);
+  return p
 }
-createTodo()
 
+const gettodo = async(id)=>{
+    let response = await fetch("https://jsonplaceholder.typicode.com/photos/"+id);
+    let r = await response.json();
+    return r
+}
+
+const mainfunc= async()=>{
+    let todo = {
+        title:"Ayan",
+        body:"bhai",
+        userid:1,
+    }
+   let a = await createTodo(todo)
+   console.log(a);
+   console.log(await gettodo(1));
+}
+mainfunc()
