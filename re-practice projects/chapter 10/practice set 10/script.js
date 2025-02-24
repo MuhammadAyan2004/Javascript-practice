@@ -81,7 +81,7 @@ function createNote(){
 container.addEventListener("click",(e)=>{
     if(e.target.tagName === "IMG"){
         e.target.parentElement.remove()
-        e.target = localStorage.removeItem("notes")
+        saveNotes()
     }
 })
 
