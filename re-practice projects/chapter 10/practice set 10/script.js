@@ -51,3 +51,38 @@
 
 // question # 2
 
+const genbtn = document.querySelector(".genbtn")
+const container = document.querySelector(".notes")
+
+function showNotes (){
+    container.innerHTML = localStorage.getItem("notes")
+}
+showNotes()
+
+function saveNotes () {
+    localStorage.setItem("notes",container.innerHTML)
+}
+
+function createNote(){
+
+    const p = document.createElement("p")
+    p.classList.add("input-box")
+    p.setAttribute("contenteditable","true")
+
+    const img = document.createElement("img");
+    img.src = "images/delete.png";
+    img.classList.add("icon")
+
+    p.appendChild(img)
+    container.appendChild(p)
+    saveNotes()
+    p.addEventListener("input",saveNotes)
+}
+container.addEventListener("click",(e)=>{
+    if(e.target.tagName === "IMG"){
+        e.target.parentElement.remove()
+        e.target = localStorage.removeItem("notes")
+    }
+})
+
+genbtn.addEventListener("click",createNote);
