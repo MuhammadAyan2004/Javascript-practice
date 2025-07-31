@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    background-color: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game{
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.ptop{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(43, 82, 83);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20%;
+}
+.elem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.box {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: white;
+    color: cadetblue;
+    font-weight: 600;
+    font-size: 25px;
+    border-radius: 10px;
+    text-align: center;
+    align-content: center;
+}
+.pbtom{
+    width: 100%;
+    height: calc(100% - 80px);
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    /* perspective: 600px; */
+}
+.bubble{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    color: white;
+    background-color: rgb(43, 82, 83);
+    align-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 1s ease;
+    /* transform-style: preserve-3d;  */
+}
+.bubble:hover{
+    background-color: rgb(31, 63, 65);
+    transform: rotatey(360deg);
+}
