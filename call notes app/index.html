@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <img src="" class="p">
+        <div class="form">
+            <form>
+                <h2>New Call</h2>
+                <p>Image URL</p>
+                <input type="text" placeholder="https://example.com/photo.jpg" id="img-inp">
+                <p>Full Name</p>
+                <input type="text" placeholder="Enter your full name" id="name-inp">
+                <p>Home Town</p>
+                <input type="text" placeholder="Enter your home town" id="city-inp">
+                <p>Purpose</p>
+                <input type="text" placeholder="e.g: Quick appointment note" id="purpose-inp">
+                <button id="create-btn">Create Note</button>
+                <button id="close-btn">Close</button>
+            </form>
+        </div>
+        <div class="card-content">
+            <div class="left">
+                <div class="icon" id="create"><i class="ri-add-line"></i></div>
+                <div class="icon" id="up"><i class="ri-arrow-up-fill"></i></div>
+                <div class="icon" id="down"><i class="ri-arrow-down-fill"></i></div>
+            </div>
+
+            <div class="cards">
+                <div class="img">
+                    <img src="https://thumbs.dreamstime.com/b/user-icon-flat-style-person-icon-user-icon-web-site-user-icon-vector-illustration-user-icon-flat-style-person-icon-user-129831161.jpg" id="pic-url">
+                </div>
+                <h2 class="name">name</h2>
+                <div class="city">
+                    <p>Hometown</p>
+                    <p id="city-name">------</p>
+                </div>
+                <div class="purpose">
+                    <p>purpose</p>
+                    <p id="purpose-name">-----------</p>
+                </div>
+                <button><i class="ri-phone-line"></i> Call</button>
+                <button>Message</button>
+            </div>
+
+            <div class="right">
+                <div class="theme" data-color="red"></div>
+                <div class="theme" data-color="green"></div>
+                <div class="theme" data-color="blue"></div>
+                <div class="theme" data-color="purple"></div>
+            </div>    
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
