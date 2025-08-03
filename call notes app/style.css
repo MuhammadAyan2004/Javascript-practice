@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.form{
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px grey;
+    display: none;
+}
+form{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+form h2{
+    font-weight: 400;
+    padding-block: 10px;
+}
+form p{
+    padding-top: 10px;
+}
+form input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgba(44, 44, 44, 0.699);
+    color: white;
+    margin-top: 10px;
+}
+form button{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: rgb(27, 27, 27);
+    font-size: 16px;
+    cursor: pointer;
+}
+form button:hover{
+    opacity: 0.8;
+}
+form button:nth-child(10){
+    margin-top: 30px;
+}
+form button:nth-child(11){
+    background-color: red;
+}
+
+.card-content{
+    width: 90vh;
+    display: flex;
+    align-items: center;
+    gap: 8vh;
+    padding: 20px;
+    /* display: none; */
+}
+.left{
+    width: 10vh;
+    font-size: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.icon{
+    width: 6vh;
+    height: 6vh;
+    background-color: rgb(29, 29, 29);
+    margin-top: 10px;
+    border-radius: 50%;
+    text-align: center;
+    align-content: center;
+    cursor: pointer;
+}
+.cards{
+    width: 55vh;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid grey;
+}
+.img{
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+}
+.img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.cards h2{
+    padding-block: 10px;
+}
+.city,.purpose{
+    width: 100%;
+    height: 4vh;
+    display: flex;
+    justify-content: space-between;
+}
+.cards button{
+    width: 14vh;
+    height: 5vh;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    box-shadow: 2px 1px 2px grey,inset 1px 1px 2px rgba(255, 255, 255, 0.411);
+}
+.cards button:nth-child(5){
+    background-color: rgb(43, 42, 42);
+}
+
+.right{
+    width: 10vh;
+}
+.theme{
+    width: 3.5vh;
+    height: 3.5vh;
+    border-radius: 50%;
+    background-color: white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.theme:nth-child(1){
+    background-color: red;
+}
+.theme:nth-child(2){
+    background-color: green;
+}
+.theme:nth-child(3){
+    background-color: blue;
+}
+.theme:nth-child(4){
+    background-color: purple;
+}
