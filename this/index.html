@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form & Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <form id="userForm">
+            <h2>Add User</h2>
+            <input type="text" placeholder="Name" name="name" required id="name">
+            <input type="text" placeholder="Role" name="role" required id="role">
+            <textarea placeholder="Bio" name="bio" required id="bio"></textarea>
+            <input type="url" placeholder="Photo URL" name="photo" required id="photo">
+            <button type="submit">Submit</button>
+        </form>
+    
+
+        <div class="users">
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
